@@ -1,11 +1,12 @@
 let currentQuestion = 0;
 let score = 0;
 let wrongQuestions = [];
+let currentOptions = [];
 
-const originalQuestions = [...questions]; // 🔥 preserve original
+const originalQuestions = [...questions];
 let quizQuestions = [];
-
 let totalQuestions = 0;
+let shuffleEnabled = true;
 
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
@@ -23,17 +24,7 @@ function shuffle(array) {
   }
 }
 
-function shuffleOptions(question) {
-  const combined = question.options.map((opt, index) => ({
-    text: opt,
-    isCorrect: index === question.answer
-  }));
 
-  shuffle(combined);
-
-  question.options = combined.map(item => item.text);
-  question.answer = combined.findIndex(item => item.isCorrect);
-}
 
 /* =========================
    SETUP QUIZ DATA
@@ -42,12 +33,11 @@ function shuffleOptions(question) {
 function prepareQuestions(source) {
   quizQuestions = source.map(q => ({
     ...q,
-    options: [...q.options]
+    options: [...q.options],
+    explanations: q.explanations ? [...q.explanations] : [],
   }));
 
   shuffle(quizQuestions);
-  quizQuestions.forEach(q => shuffleOptions(q));
-
   totalQuestions = quizQuestions.length;
 }
 
@@ -61,41 +51,115 @@ function loadQuestion() {
 
   const q = quizQuestions[currentQuestion];
 
-  questionEl.textContent = `(${currentQuestion + 1}/${totalQuestions}) ${q.question}`;
+  questionEl.innerHTML = `
+    <div class="question-main">(${currentQuestion + 1}/${totalQuestions}) ${q.question}</div>
+    
+    ${q.image ? `
+      <div class="question-image" style="margin-top:10px;">
+        <img src="${q.image}" alt="question image" style="max-width:100%; border-radius:8px;">
+      </div>
+    ` : ""}
 
-  q.options.forEach((option, index) => {
+    <div id="question-translation" style="display:none; margin-top:8px; font-size:0.95em; opacity:0.85;">
+      ${q.translation || ""} 
+    </div>
+  `;
+
+  const translationEl = document.getElementById("question-translation");
+  questionEl.onclick = () => {
+    if (!q.translation) return;
+    translationEl.style.display =
+      translationEl.style.display === "none" ? "block" : "none";
+  };
+
+  currentOptions = q.options.map((opt, i) => ({
+    text: opt,
+    explanation: q.explanations?.[i] || null,
+    originalIndex: i
+  }));
+
+  shuffle(currentOptions);
+
+  currentOptions.forEach((optObj, index) => {
+    const row = document.createElement("div");
+    row.className = "option-row";
+
+    const topRow = document.createElement("div");
+    topRow.className = "option-top-row";
+
     const btn = document.createElement("button");
-    btn.textContent = option;
+    btn.className = "answer-btn";
+    btn.textContent = optObj.text;
     btn.onclick = () => selectAnswer(index);
-    answersEl.appendChild(btn);
+
+    const infoBtn = document.createElement("button");
+    infoBtn.className = "info-btn";
+    infoBtn.textContent = "?";
+    infoBtn.disabled = false;
+    infoBtn.onclick = (e) => {
+      e.stopPropagation();
+      toggleExplanation(row, optObj);
+    };
+
+    topRow.appendChild(btn);
+    topRow.appendChild(infoBtn);
+    row.appendChild(topRow);
+
+    answersEl.appendChild(row);
   });
 }
 
+function toggleExplanation(row, optObj) {
+  let existing = row.querySelector(".option-explanation");
+
+  if (existing) {
+    existing.remove();
+    return;
+  }
+
+  const exp = optObj.explanation;
+  if (!exp) return;
+
+  const box = document.createElement("div");
+  box.className = "option-explanation";
+
+  box.innerHTML = `
+    <div><strong>English:</strong> ${exp.en || ""}</div>
+    <div><strong>Note:</strong> ${exp.note || ""}</div>
+    ${exp.link ? `<div><a href="${exp.link}" target="_blank" rel="noopener noreferrer">Learn more</a></div>` : ""}
+  `;
+
+  row.appendChild(box);
+}
 /* =========================
    SELECT ANSWER
 ========================= */
 
 function selectAnswer(index) {
-  const q = quizQuestions[currentQuestion];
-  const correct = q.answer;
-  const buttons = answersEl.children;
+  const correctOriginal = quizQuestions[currentQuestion].answer;
+  const rows = answersEl.querySelectorAll(".option-row");
 
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].disabled = true;
+  rows.forEach((row, i) => {
+    const btn = row.querySelector(".answer-btn");
+    const infoBtn = row.querySelector(".info-btn");
 
-    if (i === correct) {
-      buttons[i].classList.add("correct");
+    btn.disabled = true;
+    infoBtn.disabled = false;
+
+    if (currentOptions[i].originalIndex === correctOriginal) {
+      btn.classList.add("correct");
     } else {
-      buttons[i].classList.add("wrong");
+      btn.classList.add("wrong");
     }
-  }
+  });
 
-  if (index === correct) {
+  if (currentOptions[index].originalIndex === correctOriginal) {
     feedbackEl.textContent = "Correct";
     score++;
   } else {
     feedbackEl.textContent = "Wrong";
 
+    const q = quizQuestions[currentQuestion];
     if (!wrongQuestions.find(w => w.id === q.id)) {
       wrongQuestions.push(q);
     }
@@ -103,15 +167,22 @@ function selectAnswer(index) {
 
   scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
 
-  setTimeout(() => {
+  const continueBtn = document.createElement("button");
+  continueBtn.className = "continue-btn";
+  continueBtn.textContent = "Continue";
+
+  continueBtn.onclick = () => {
     currentQuestion++;
+    currentOptions = [];
 
     if (currentQuestion >= quizQuestions.length) {
       showEndScreen();
     } else {
       loadQuestion();
     }
-  }, 800);
+  };
+
+  answersEl.appendChild(continueBtn);
 }
 
 /* =========================

@@ -9,6 +9,7 @@
   <body>
     <div class="container">
       <h1>汉语桥 Quiz</h1>
+      <button id="shuffle-toggle" onclick="toggleShuffle()">Shuffle: ON</button>
 
       <div id="question-box">
         <p id="question">Question loads here</p>
@@ -19,9 +20,9 @@
       <p id="feedback"></p>
 
       <p id="score">Score: 0</p>
+      <button onclick="restartQuiz()">Restart</button>
     </div>
 
-    >
     <script src="questions.js"></script>
     <script src="script.js"></script>
   </body>

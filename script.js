@@ -24,7 +24,15 @@ function shuffle(array) {
   }
 }
 
+function toggleShuffle() {
+  shuffleEnabled = !shuffleEnabled;
 
+  const toggleBtn = document.getElementById("shuffle-toggle");
+  toggleBtn.textContent = shuffleEnabled ? "Shuffle: ON" : "Shuffle: OFF";
+
+  // 🔁 FULL RE-INITIALISATION
+  restartQuiz();
+}
 
 /* =========================
    SETUP QUIZ DATA
@@ -37,7 +45,12 @@ function prepareQuestions(source) {
     explanations: q.explanations ? [...q.explanations] : [],
   }));
 
+if (shuffleEnabled) {
   shuffle(quizQuestions);
+} else {
+  quizQuestions.sort((a, b) => a.id - b.id);
+}
+
   totalQuestions = quizQuestions.length;
 }
 
@@ -78,8 +91,9 @@ function loadQuestion() {
     originalIndex: i
   }));
 
+if (shuffleEnabled) {
   shuffle(currentOptions);
-
+}
   currentOptions.forEach((optObj, index) => {
     const row = document.createElement("div");
     row.className = "option-row";
@@ -243,9 +257,11 @@ function restartQuiz() {
   currentQuestion = 0;
   score = 0;
   wrongQuestions = [];
+  currentOptions = [];
+
+  feedbackEl.textContent = "";
 
   prepareQuestions(originalQuestions);
-
   scoreEl.textContent = `Score: 0 / ${totalQuestions}`;
 
   loadQuestion();

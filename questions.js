@@ -496,341 +496,583 @@ const questions = [
   ]
 },
 
-// { 
-//   id:37, 
-//   question:"被称为“万国建筑博物馆”的是（ ）", 
-//   translation:"Which place is known as the 'Museum of International Architecture'?",
-//   options:["泉州","漳州","福州","鼓浪屿"], 
-//   answer:3,
-//   explanations:[
-//     { en:"Quanzhou", note:"Known for maritime history, not this title.", link:"" },
-//     { en:"Zhangzhou", note:"Not associated with this description.", link:"" },
-//     { en:"Fuzhou", note:"Not known by this title.", link:"" },
-//     { en:"Gulangyu", note:"Correct. Famous for diverse international architectural styles.", link:"" }
-//   ]
-// },
+{ 
+  id:37, 
+  question:"被称为“万国建筑博物馆”的是（ ）", 
+  translation:"Which place is known as the 'Museum of International Architecture'?",
+  options:["泉州","漳州","福州","鼓浪屿"], 
+  answer:3,
+  explanations:[
+    { en:"Quanzhou", note:"Known for maritime history, not this title.", link:"" },
+    { en:"Zhangzhou", note:"Not associated with this description.", link:"" },
+    { en:"Fuzhou", note:"Not known by this title.", link:"" },
+    { en:"Gulangyu", note:"Correct. Famous for diverse international architectural styles.", link:"" }
+  ]
+},
 
-// { 
-//   id:38, 
-//   question:"福建土楼是中国传统民居建筑的杰出代表，以独特的圆形、方形等夯土结构闻名于世。请问土楼（如承启楼、振成楼）的主要功能是（ ）？", 
-//   translation:"Fujian Tulou are traditional residential buildings known for their unique earthen structures. What is their main function?",
-//   options:["防御外敌与家族聚居","商业贸易与货物存储","宗教祭祀与文化传承","旅游观光与休闲度假"], 
-//   answer:0,
-//   explanations:[
-//     { en:"defence and clan living", note:"Correct. Designed for protection and communal living.", link:"" },
-//     { en:"trade and storage", note:"Not the primary purpose.", link:"" },
-//     { en:"religious use", note:"Not their main function.", link:"" },
-//     { en:"tourism", note:"Modern use, not original purpose.", link:"" }
-//   ]
-// },
+{ 
+  id:38, 
+  question:"福建土楼是中国传统民居建筑的杰出代表，以独特的圆形、方形等夯土结构闻名于世。请问土楼（如承启楼、振成楼）的主要功能是（ ）？", 
+  translation:"Fujian Tulou are traditional residential buildings known for their unique earthen structures. What is their main function?",
+  options:["防御外敌与家族聚居","商业贸易与货物存储","宗教祭祀与文化传承","旅游观光与休闲度假"], 
+  answer:0,
+  explanations:[
+    { en:"defence and clan living", note:"Correct. Designed for protection and communal living.", link:"" },
+    { en:"trade and storage", note:"Not the primary purpose.", link:"" },
+    { en:"religious use", note:"Not their main function.", link:"" },
+    { en:"tourism", note:"Modern use, not original purpose.", link:"" }
+  ]
+},
 
-// { 
-//   id:39, 
-//   question:"泉州作为宋元时期“东方第一大港”，输出到海外的商品主要有（ ）", 
-//   translation:"As the 'largest port in the East' during the Song and Yuan dynasties, what goods did Quanzhou mainly export overseas?",
-//   options:["珍珠、玉器","瓷器、宝石","丝绸、香料","陶瓷、茶叶"], 
-//   answer:3,
-//   explanations:[
-//     { en:"pearls and jade", note:"Not the main export category.", link:"" },
-//     { en:"porcelain and gemstones", note:"Partially relevant but not the best answer.", link:"" },
-//     { en:"silk and spices", note:"Important in trade but not the primary pair here.", link:"" },
-//     { en:"ceramics and tea", note:"Correct. Major export goods from China.", link:"" }
-//   ]
-// },
+{ 
+  id:39, 
+  question:"泉州作为宋元时期“东方第一大港”，输出到海外的商品主要有（ ）", 
+  translation:"As the 'largest port in the East' during the Song and Yuan dynasties, what goods did Quanzhou mainly export overseas?",
+  options:["珍珠、玉器","瓷器、宝石","丝绸、香料","陶瓷、茶叶"], 
+  answer:3,
+  explanations:[
+    { en:"pearls and jade", note:"Not the main export category.", link:"" },
+    { en:"porcelain and gemstones", note:"Partially relevant but not the best answer.", link:"" },
+    { en:"silk and spices", note:"Important in trade but not the primary pair here.", link:"" },
+    { en:"ceramics and tea", note:"Correct. Major export goods from China.", link:"" }
+  ]
+},
 
-// { 
-//   id:40, 
-//   question:"农历五月初五是端午节，节日期间有着丰富多彩的民俗活动。下列各项活动中不属于传统端午节活动的一项是（ ）", 
-//   translation:"The Dragon Boat Festival falls on the 5th day of the 5th lunar month. Which of the following is NOT a traditional activity?",
-//   options:["吃粽子","赛龙舟","挂菖蒲","猜灯谜"], 
-//   answer:3,
-//   explanations:[
-//     { en:"eat zongzi", note:"Traditional Dragon Boat Festival activity.", link:"" },
-//     { en:"dragon boat racing", note:"Core traditional activity.", link:"" },
-//     { en:"hang calamus", note:"Traditional practice for warding off evil.", link:"" },
-//     { en:"riddle guessing", note:"Correct. Associated with the Lantern Festival, not Dragon Boat Festival.", link:"" }
-//   ]
-// },
-// { 
-//   id:41, 
-//   question:"中国北方民间有“一九二九不出手，三九四九冰上走”的歌谣，描绘的是有关“数九”的节令习俗，请问“数九”是从哪个节气开始的？（ ）", 
-//   translation:"In northern China, the saying describes the 'Counting Nine' winter tradition. From which solar term does it begin?",
-//   options:["立冬","大雪","冬至","大寒"], 
-//   answer:2,
-//   explanations:[
-//     { en:"Beginning of Winter", note:"Not the starting point of '数九'.", link:"" },
-//     { en:"Major Snow", note:"Occurs before the counting begins.", link:"" },
-//     { en:"Winter Solstice", note:"Correct. '数九' starts from the Winter Solstice.", link:"" },
-//     { en:"Major Cold", note:"Occurs much later in the cycle.", link:"" }
-//   ]
-// },
+{ 
+  id:40, 
+  question:"农历五月初五是端午节，节日期间有着丰富多彩的民俗活动。下列各项活动中不属于传统端午节活动的一项是（ ）", 
+  translation:"The Dragon Boat Festival falls on the 5th day of the 5th lunar month. Which of the following is NOT a traditional activity?",
+  options:["吃粽子","赛龙舟","挂菖蒲","猜灯谜"], 
+  answer:3,
+  explanations:[
+    { en:"eat zongzi", note:"Traditional Dragon Boat Festival activity.", link:"" },
+    { en:"dragon boat racing", note:"Core traditional activity.", link:"" },
+    { en:"hang calamus", note:"Traditional practice for warding off evil.", link:"" },
+    { en:"riddle guessing", note:"Correct. Associated with the Lantern Festival, not Dragon Boat Festival.", link:"" }
+  ]
+},
+{ 
+  id:41, 
+  question:"中国北方民间有“一九二九不出手，三九四九冰上走”的歌谣，描绘的是有关“数九”的节令习俗，请问“数九”是从哪个节气开始的？（ ）", 
+  translation:"In northern China, the saying describes the 'Counting Nine' winter tradition. From which solar term does it begin?",
+  options:["立冬","大雪","冬至","大寒"], 
+  answer:2,
+  explanations:[
+    { en:"Beginning of Winter", note:"Not the starting point of '数九'.", link:"" },
+    { en:"Major Snow", note:"Occurs before the counting begins.", link:"" },
+    { en:"Winter Solstice", note:"Correct. '数九' starts from the Winter Solstice.", link:"" },
+    { en:"Major Cold", note:"Occurs much later in the cycle.", link:"" }
+  ]
+},
 
-// { 
-//   id:42, 
-//   question:"“五行学说”是中国古代哲学中一种重要的宇宙观和系统论，“五行”代表的五种元素相生相克。请问，下面不属于五行元素的是？（ ）", 
-//   translation:"The Five Elements theory includes five elements that interact with each other. Which of the following is NOT one of them?",
-//   options:["金","木","银","水"], 
-//   answer:2,
-//   explanations:[
-//     { en:"metal", note:"One of the Five Elements.", link:"" },
-//     { en:"wood", note:"One of the Five Elements.", link:"" },
-//     { en:"silver", note:"Correct. Not part of the Five Elements system.", link:"" },
-//     { en:"water", note:"One of the Five Elements.", link:"" }
-//   ]
-// },
+{ 
+  id:42, 
+  question:"“五行学说”是中国古代哲学中一种重要的宇宙观和系统论，“五行”代表的五种元素相生相克。请问，下面不属于五行元素的是？（ ）", 
+  translation:"The Five Elements theory includes five elements that interact with each other. Which of the following is NOT one of them?",
+  options:["金","木","银","水"], 
+  answer:2,
+  explanations:[
+    { en:"metal", note:"One of the Five Elements.", link:"" },
+    { en:"wood", note:"One of the Five Elements.", link:"" },
+    { en:"silver", note:"Correct. Not part of the Five Elements system.", link:"" },
+    { en:"water", note:"One of the Five Elements.", link:"" }
+  ]
+},
 
-// { 
-//   id:43, 
-//   question:"下列哪一项民间传统工艺是主要用于戏剧表演的？（ ）", 
-//   translation:"Which traditional folk craft is mainly used for theatrical performance?",
-//   options:["剪纸","皮影雕刻技艺","木雕技艺","紫砂壶制作技艺"], 
-//   answer:1,
-//   explanations:[
-//     { en:"paper cutting", note:"Decorative art, not used for performance.", link:"" },
-//     { en:"shadow puppet carving", note:"Correct. Used in shadow puppet theatre.", link:"" },
-//     { en:"wood carving", note:"General craft, not specifically theatrical.", link:"" },
-//     { en:"Yixing teapot making", note:"Used for tea culture, not theatre.", link:"" }
-//   ]
-// },
+{ 
+  id:43, 
+  question:"下列哪一项民间传统工艺是主要用于戏剧表演的？（ ）", 
+  translation:"Which traditional folk craft is mainly used for theatrical performance?",
+  options:["剪纸","皮影雕刻技艺","木雕技艺","紫砂壶制作技艺"], 
+  answer:1,
+  explanations:[
+    { en:"paper cutting", note:"Decorative art, not used for performance.", link:"" },
+    { en:"shadow puppet carving", note:"Correct. Used in shadow puppet theatre.", link:"" },
+    { en:"wood carving", note:"General craft, not specifically theatrical.", link:"" },
+    { en:"Yixing teapot making", note:"Used for tea culture, not theatre.", link:"" }
+  ]
+},
 
-// { 
-//   id:44, 
-//   question:"中国有许多地名有“阴”“阳”二字，下列说法正确的是？（ ）", 
-//   translation:"Many Chinese place names include 'yin' and 'yang'. Which statement is correct?",
-//   options:["山南水北为阴","山北水南为阳","山东水西为阳","山北水南为阴"], 
-//   answer:3,
-//   explanations:[
-//     { en:"south of mountain / north of river = yin", note:"Incorrect.", link:"" },
-//     { en:"north of mountain / south of river = yang", note:"Incorrect pairing.", link:"" },
-//     { en:"east of mountain / west of river = yang", note:"Not a standard rule.", link:"" },
-//     { en:"north of mountain / south of river = yin", note:"Correct. Yin = shaded side: north of mountain, south of river.", link:"" }
-//   ]
-// },
+{ 
+  id:44, 
+  question:"中国有许多地名有“阴”“阳”二字，下列说法正确的是？（ ）", 
+  translation:"Many Chinese place names include 'yin' and 'yang'. Which statement is correct?",
+  options:["山南水北为阴","山北水南为阳","山东水西为阳","山北水南为阴"], 
+  answer:3,
+  explanations:[
+    { en:"south of mountain / north of river = yin", note:"Incorrect.", link:"" },
+    { en:"north of mountain / south of river = yang", note:"Incorrect pairing.", link:"" },
+    { en:"east of mountain / west of river = yang", note:"Not a standard rule.", link:"" },
+    { en:"north of mountain / south of river = yin", note:"Correct. Yin = shaded side: north of mountain, south of river.", link:"" }
+  ]
+},
 
-// { 
-//   id:45, 
-//   question:"下列哪一项不是中秋节的传统习俗？（ ）", 
-//   translation:"Which of the following is NOT a traditional Mid-Autumn Festival activity?",
-//   options:["拜月","悬挂菖蒲艾叶","吃月饼","阖家团聚"], 
-//   answer:1,
-//   explanations:[
-//     { en:"moon worship", note:"Traditional Mid-Autumn activity.", link:"" },
-//     { en:"hanging calamus and mugwort", note:"Correct. This is a Dragon Boat Festival custom.", link:"" },
-//     { en:"eating mooncakes", note:"Core Mid-Autumn tradition.", link:"" },
-//     { en:"family reunion", note:"Key Mid-Autumn theme.", link:"" }
-//   ]
-// },
-// { 
-//   id:46, 
-//   question:"放风筝是一种传统游艺，民间有许多关于风筝的别称，下列哪个不是风筝的别称？（ ）", 
-//   translation:"Flying kites is a traditional activity. Which of the following is NOT another name for a kite?",
-//   options:["纸鸢","纸鹞","鹞子","鸢尾"], 
-//   answer:3,
-//   explanations:[
-//     { en:"paper kite", note:"Traditional name for kite.", link:"" },
-//     { en:"paper hawk", note:"Another historical name for kite.", link:"" },
-//     { en:"kite (hawk-like)", note:"Common folk term for kite.", link:"" },
-//     { en:"iris (plant)", note:"Correct. Refers to a flower, not a kite.", link:"" }
-//   ]
-// },
+{ 
+  id:45, 
+  question:"下列哪一项不是中秋节的传统习俗？（ ）", 
+  translation:"Which of the following is NOT a traditional Mid-Autumn Festival activity?",
+  options:["拜月","悬挂菖蒲艾叶","吃月饼","阖家团聚"], 
+  answer:1,
+  explanations:[
+    { en:"moon worship", note:"Traditional Mid-Autumn activity.", link:"" },
+    { en:"hanging calamus and mugwort", note:"Correct. This is a Dragon Boat Festival custom.", link:"" },
+    { en:"eating mooncakes", note:"Core Mid-Autumn tradition.", link:"" },
+    { en:"family reunion", note:"Key Mid-Autumn theme.", link:"" }
+  ]
+},
+{ 
+  id:46, 
+  question:"放风筝是一种传统游艺，民间有许多关于风筝的别称，下列哪个不是风筝的别称？（ ）", 
+  translation:"Flying kites is a traditional activity. Which of the following is NOT another name for a kite?",
+  options:["纸鸢","纸鹞","鹞子","鸢尾"], 
+  answer:3,
+  explanations:[
+    { en:"paper kite", note:"Traditional name for kite.", link:"" },
+    { en:"paper hawk", note:"Another historical name for kite.", link:"" },
+    { en:"kite (hawk-like)", note:"Common folk term for kite.", link:"" },
+    { en:"iris (plant)", note:"Correct. Refers to a flower, not a kite.", link:"" }
+  ]
+},
 
-// { 
-//   id:47, 
-//   question:"“绿水青山就是金山银山”的理念最能反映中国重视以下哪类建设？（ ）", 
-//   translation:"The idea 'lucid waters and lush mountains are invaluable assets' reflects China's emphasis on which type of development?",
-//   options:["经济建设","文化建设","生态文明建设","社会建设"], 
-//   answer:2,
-//   explanations:[
-//     { en:"economic development", note:"Partially related but not the core idea.", link:"" },
-//     { en:"cultural development", note:"Not the focus here.", link:"" },
-//     { en:"ecological civilisation", note:"Correct. Emphasises environmental protection.", link:"" },
-//     { en:"social development", note:"Too broad; not specific to the idea.", link:"" }
-//   ]
-// },
+{ 
+  id:47, 
+  question:"“绿水青山就是金山银山”的理念最能反映中国重视以下哪类建设？（ ）", 
+  translation:"The idea 'lucid waters and lush mountains are invaluable assets' reflects China's emphasis on which type of development?",
+  options:["经济建设","文化建设","生态文明建设","社会建设"], 
+  answer:2,
+  explanations:[
+    { en:"economic development", note:"Partially related but not the core idea.", link:"" },
+    { en:"cultural development", note:"Not the focus here.", link:"" },
+    { en:"ecological civilisation", note:"Correct. Emphasises environmental protection.", link:"" },
+    { en:"social development", note:"Too broad; not specific to the idea.", link:"" }
+  ]
+},
 
-// { 
-//   id:48, 
-//   question:"有这样一句话，“咬定青山大地，立根黄沙破岩”，其中“咬定青山大地”是化用清代诗人郑板桥的诗句：“咬定青山不放松”，请问这句诗描写的是下列哪个物种呢？（ ）", 
-//   translation:"The line 'gripping firmly onto the green mountain' comes from Zheng Banqiao's poem. Which plant does it describe?",
-//   options:["榕树","竹子","花生","松树"], 
-//   answer:1,
-//   explanations:[
-//     { en:"banyan tree", note:"Not the subject of the poem.", link:"" },
-//     { en:"bamboo", note:"Correct. Symbolises resilience and integrity.", link:"" },
-//     { en:"peanut", note:"Unrelated.", link:"" },
-//     { en:"pine tree", note:"Also symbolic, but not this poem.", link:"" }
-//   ]
-// },
+{ 
+  id:48, 
+  question:"有这样一句话，“咬定青山大地，立根黄沙破岩”，其中“咬定青山大地”是化用清代诗人郑板桥的诗句：“咬定青山不放松”，请问这句诗描写的是下列哪个物种呢？（ ）", 
+  translation:"The line 'gripping firmly onto the green mountain' comes from Zheng Banqiao's poem. Which plant does it describe?",
+  options:["榕树","竹子","花生","松树"], 
+  answer:1,
+  explanations:[
+    { en:"banyan tree", note:"Not the subject of the poem.", link:"" },
+    { en:"bamboo", note:"Correct. Symbolises resilience and integrity.", link:"" },
+    { en:"peanut", note:"Unrelated.", link:"" },
+    { en:"pine tree", note:"Also symbolic, but not this poem.", link:"" }
+  ]
+},
 
-// { 
-//   id:49, 
-//   question:"看图，与图中所示情景有关的诗句是（ ）", 
-//   translation:"Based on the image, which poem line matches the scene?",
-//   image:"/images/q49.png", // ← ADD THIS
-//   options:[
-//     "宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。",
-//     "阿爷无大儿，木兰无长兄。愿为市鞍马，从此替爷征。",
-//     "生当作人杰，死亦为鬼雄。至今思项羽，不肯过江东。",
-//     "日出东南隅，照我秦氏楼。秦氏有好女，自名为罗敷。"
-//   ], 
-//   answer:1,
-//   explanations:[
-//     { en:"festival night scene", note:"Describes Lantern Festival.", link:"" },
-//     { en:"Mulan joins the army", note:"Correct. Matches the image context.", link:"" },
-//     { en:"heroic reflection", note:"Not related to the image.", link:"" },
-//     { en:"beauty description", note:"Unrelated to the scene.", link:"" }
-//   ]
-// },
+{ 
+  id:49, 
+  question:"看图，与图中所示情景有关的诗句是（ ）", 
+  translation:"Based on the image, which poem line matches the scene?",
+  image:"/images/q49.png", // ← ADD THIS
+  options:[
+    "宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。",
+    "阿爷无大儿，木兰无长兄。愿为市鞍马，从此替爷征。",
+    "生当作人杰，死亦为鬼雄。至今思项羽，不肯过江东。",
+    "日出东南隅，照我秦氏楼。秦氏有好女，自名为罗敷。"
+  ], 
+  answer:1,
+  explanations:[
+    { en:"festival night scene", note:"Describes Lantern Festival.", link:"" },
+    { en:"Mulan joins the army", note:"Correct. Matches the image context.", link:"" },
+    { en:"heroic reflection", note:"Not related to the image.", link:"" },
+    { en:"beauty description", note:"Unrelated to the scene.", link:"" }
+  ]
+},
 
-// { 
-//   id:50, 
-//   question:"下列人物与情节，搭配不当的是（ ）", 
-//   translation:"Which character and event pairing is incorrect?",
-//   options:["鲁智深——倒拔垂杨柳","孙悟空——大闹天宫","曹操——三顾茅庐","刘姥姥——进大观园"], 
-//   answer:2,
-//   explanations:[
-//     { en:"Lu Zhishen — uproots willow tree", note:"Correct pairing.", link:"" },
-//     { en:"Sun Wukong — wreaks havoc in Heaven", note:"Correct pairing.", link:"" },
-//     { en:"Cao Cao — visits Zhuge Liang three times", note:"Correct answer. This act belongs to Liu Bei, not Cao Cao.", link:"" },
-//     { en:"Granny Liu — enters Grand View Garden", note:"Correct pairing.", link:"" }
-//   ]
-// },
-// { 
-//   id:51, 
-//   question:"“山不在高，有仙则名。水不在深，有龙则灵。”出自以下哪部作品？（ ）", 
-//   translation:"'A mountain need not be high; with immortals it becomes famous. Water need not be deep; with dragons it becomes spiritual.' Which work is this from?",
-//   options:["《爱莲说》","《石钟山记》","《陋室铭》","《小石潭记》"], 
-//   answer:2,
-//   explanations:[
-//     { en:"On the Love of the Lotus", note:"Different essay by Zhou Dunyi.", link:"" },
-//     { en:"Record of Stone Bell Mountain", note:"Not the correct source.", link:"" },
-//     { en:"Inscription of the Humble Room", note:"Correct. Written by Liu Yuxi.", link:"" },
-//     { en:"Record of the Little Stone Pond", note:"Different prose work.", link:"" }
-//   ]
-// },
+{ 
+  id:50, 
+  question:"下列人物与情节，搭配不当的是（ ）", 
+  translation:"Which character and event pairing is incorrect?",
+  options:["鲁智深——倒拔垂杨柳","孙悟空——大闹天宫","曹操——三顾茅庐","刘姥姥——进大观园"], 
+  answer:2,
+  explanations:[
+    { en:"Lu Zhishen — uproots willow tree", note:"Correct pairing.", link:"" },
+    { en:"Sun Wukong — wreaks havoc in Heaven", note:"Correct pairing.", link:"" },
+    { en:"Cao Cao — visits Zhuge Liang three times", note:"Correct answer. This act belongs to Liu Bei, not Cao Cao.", link:"" },
+    { en:"Granny Liu — enters Grand View Garden", note:"Correct pairing.", link:"" }
+  ]
+},
+{ 
+  id:51, 
+  question:"“山不在高，有仙则名。水不在深，有龙则灵。”出自以下哪部作品？（ ）", 
+  translation:"'A mountain need not be high; with immortals it becomes famous. Water need not be deep; with dragons it becomes spiritual.' Which work is this from?",
+  options:["《爱莲说》","《石钟山记》","《陋室铭》","《小石潭记》"], 
+  answer:2,
+  explanations:[
+    { en:"On the Love of the Lotus", note:"Different essay by Zhou Dunyi.", link:"" },
+    { en:"Record of Stone Bell Mountain", note:"Not the correct source.", link:"" },
+    { en:"Inscription of the Humble Room", note:"Correct. Written by Liu Yuxi.", link:"" },
+    { en:"Record of the Little Stone Pond", note:"Different prose work.", link:"" }
+  ]
+},
 
-// { 
-//   id:52, 
-//   question:"元曲是元代最具代表性的文学样式，下列不属于“元曲四大家”的是（ ）", 
-//   translation:"Yuan drama is a representative literary form of the Yuan dynasty. Which of the following is NOT one of the 'Four Great Yuan Playwrights'?",
-//   options:["关汉卿","白朴","马致远","张养浩"], 
-//   answer:3,
-//   explanations:[
-//     { en:"Guan Hanqing", note:"One of the Four Great Yuan playwrights.", link:"" },
-//     { en:"Bai Pu", note:"One of the Four Great Yuan playwrights.", link:"" },
-//     { en:"Ma Zhiyuan", note:"One of the Four Great Yuan playwrights.", link:"" },
-//     { en:"Zhang Yanghao", note:"Correct. Not part of the Four.", link:"" }
-//   ]
-// },
+{ 
+  id:52, 
+  question:"元曲是元代最具代表性的文学样式，下列不属于“元曲四大家”的是（ ）", 
+  translation:"Yuan drama is a representative literary form of the Yuan dynasty. Which of the following is NOT one of the 'Four Great Yuan Playwrights'?",
+  options:["关汉卿","白朴","马致远","张养浩"], 
+  answer:3,
+  explanations:[
+    { en:"Guan Hanqing", note:"One of the Four Great Yuan playwrights.", link:"" },
+    { en:"Bai Pu", note:"One of the Four Great Yuan playwrights.", link:"" },
+    { en:"Ma Zhiyuan", note:"One of the Four Great Yuan playwrights.", link:"" },
+    { en:"Zhang Yanghao", note:"Correct. Not part of the Four.", link:"" }
+  ]
+},
 
-// { 
-//   id:53, 
-//   question:"“少小离家老大回，乡音未改鬓毛衰。儿童相见不相识，笑问客从何处来”这首古诗中的“客”是指（ ）", 
-//   translation:"In the poem 'Returning Home', who does 'guest' refer to?",
-//   options:["贺知章","李白","王维","王昌龄"], 
-//   answer:0,
-//   explanations:[
-//     { en:"He Zhizhang", note:"Correct. The poet refers to himself as the 'guest'.", link:"" },
-//     { en:"Li Bai", note:"Not the author of this poem.", link:"" },
-//     { en:"Wang Wei", note:"Not the author.", link:"" },
-//     { en:"Wang Changling", note:"Not the author.", link:"" }
-//   ]
-// },
+{ 
+  id:53, 
+  question:"“少小离家老大回，乡音未改鬓毛衰。儿童相见不相识，笑问客从何处来”这首古诗中的“客”是指（ ）", 
+  translation:"In the poem 'Returning Home', who does 'guest' refer to?",
+  options:["贺知章","李白","王维","王昌龄"], 
+  answer:0,
+  explanations:[
+    { en:"He Zhizhang", note:"Correct. The poet refers to himself as the 'guest'.", link:"" },
+    { en:"Li Bai", note:"Not the author of this poem.", link:"" },
+    { en:"Wang Wei", note:"Not the author.", link:"" },
+    { en:"Wang Changling", note:"Not the author.", link:"" }
+  ]
+},
 
-// { 
-//   id:54, 
-//   question:"初唐诗《春江花月夜》被誉为“孤篇盖全唐”，这首诗的作者是（ ）", 
-//   translation:"The early Tang poem 'Spring River Flower Moon Night' is praised as 'a single poem surpassing all of Tang poetry'. Who is the author?",
-//   options:["王维","宋之问","陈子昂","张若虚"], 
-//   answer:3,
-//   explanations:[
-//     { en:"Wang Wei", note:"Famous poet, but not the author.", link:"" },
-//     { en:"Song Zhiwen", note:"Not the author.", link:"" },
-//     { en:"Chen Zi'ang", note:"Not the author.", link:"" },
-//     { en:"Zhang Ruoxu", note:"Correct. Author of this poem.", link:"" }
-//   ]
-// },
+{ 
+  id:54, 
+  question:"初唐诗《春江花月夜》被誉为“孤篇盖全唐”，这首诗的作者是（ ）", 
+  translation:"The early Tang poem 'Spring River Flower Moon Night' is praised as 'a single poem surpassing all of Tang poetry'. Who is the author?",
+  options:["王维","宋之问","陈子昂","张若虚"], 
+  answer:3,
+  explanations:[
+    { en:"Wang Wei", note:"Famous poet, but not the author.", link:"" },
+    { en:"Song Zhiwen", note:"Not the author.", link:"" },
+    { en:"Chen Zi'ang", note:"Not the author.", link:"" },
+    { en:"Zhang Ruoxu", note:"Correct. Author of this poem.", link:"" }
+  ]
+},
 
-// { 
-//   id:55, 
-//   question:"“四大名著”指四部中国古典长篇小说，以下哪部作品不属于四大名著？（ ）", 
-//   translation:"The 'Four Great Classical Novels' refer to four major Chinese literary works. Which one is NOT included?",
-//   options:["《聊斋志异》","《西游记》","《红楼梦》","《水浒传》"], 
-//   answer:0,
-//   explanations:[
-//     { en:"Strange Tales from a Chinese Studio", note:"Correct. Not one of the Four Great Novels.", link:"" },
-//     { en:"Journey to the West", note:"One of the Four Great Novels.", link:"" },
-//     { en:"Dream of the Red Chamber", note:"One of the Four Great Novels.", link:"" },
-//     { en:"Water Margin", note:"One of the Four Great Novels.", link:"" }
-//   ]
-// },
-// { 
-//   id:56, 
-//   question:"一位诗人因其诗歌想象瑰丽、豪放飘逸、极具浪漫主义色彩而被后世尊称为“诗仙”。请问，以下哪位诗人享有这一美誉？（ ）", 
-//   translation:"Which poet is known as the 'Immortal of Poetry' for his imaginative, bold, and romantic style?",
-//   options:["谢灵运","谢脁","王维","李白"], 
-//   answer:3,
-//   explanations:[
-//     { en:"Xie Lingyun", note:"Famous for landscape poetry, not called 'Poetry Immortal'.", link:"" },
-//     { en:"Xie Tiao", note:"Not associated with this title.", link:"" },
-//     { en:"Wang Wei", note:"Known for 'poetry and painting', not this title.", link:"" },
-//     { en:"Li Bai", note:"Correct. Known as '诗仙' for his romantic style.", link:"" }
-//   ]
-// },
+{ 
+  id:55, 
+  question:"“四大名著”指四部中国古典长篇小说，以下哪部作品不属于四大名著？（ ）", 
+  translation:"The 'Four Great Classical Novels' refer to four major Chinese literary works. Which one is NOT included?",
+  options:["《聊斋志异》","《西游记》","《红楼梦》","《水浒传》"], 
+  answer:0,
+  explanations:[
+    { en:"Strange Tales from a Chinese Studio", note:"Correct. Not one of the Four Great Novels.", link:"" },
+    { en:"Journey to the West", note:"One of the Four Great Novels.", link:"" },
+    { en:"Dream of the Red Chamber", note:"One of the Four Great Novels.", link:"" },
+    { en:"Water Margin", note:"One of the Four Great Novels.", link:"" }
+  ]
+},
+{ 
+  id:56, 
+  question:"一位诗人因其诗歌想象瑰丽、豪放飘逸、极具浪漫主义色彩而被后世尊称为“诗仙”。请问，以下哪位诗人享有这一美誉？（ ）", 
+  translation:"Which poet is known as the 'Immortal of Poetry' for his imaginative, bold, and romantic style?",
+  options:["谢灵运","谢脁","王维","李白"], 
+  answer:3,
+  explanations:[
+    { en:"Xie Lingyun", note:"Famous for landscape poetry, not called 'Poetry Immortal'.", link:"" },
+    { en:"Xie Tiao", note:"Not associated with this title.", link:"" },
+    { en:"Wang Wei", note:"Known for 'poetry and painting', not this title.", link:"" },
+    { en:"Li Bai", note:"Correct. Known as '诗仙' for his romantic style.", link:"" }
+  ]
+},
 
-// { 
-//   id:57, 
-//   question:"名句“人生自古谁无死，留取丹心照汗青”出自谁的笔下？（ ）", 
-//   translation:"Who wrote the famous line 'Since ancient times, who has not died? Let me leave a loyal heart shining in history'?",
-//   options:["范仲淹","苏轼","文天祥","辛弃疾"], 
-//   answer:2,
-//   explanations:[
-//     { en:"Fan Zhongyan", note:"Not the author of this line.", link:"" },
-//     { en:"Su Shi", note:"Not the author.", link:"" },
-//     { en:"Wen Tianxiang", note:"Correct. From 'Crossing Lingding Ocean'.", link:"" },
-//     { en:"Xin Qiji", note:"Not the author.", link:"" }
-//   ]
-// },
+{ 
+  id:57, 
+  question:"名句“人生自古谁无死，留取丹心照汗青”出自谁的笔下？（ ）", 
+  translation:"Who wrote the famous line 'Since ancient times, who has not died? Let me leave a loyal heart shining in history'?",
+  options:["范仲淹","苏轼","文天祥","辛弃疾"], 
+  answer:2,
+  explanations:[
+    { en:"Fan Zhongyan", note:"Not the author of this line.", link:"" },
+    { en:"Su Shi", note:"Not the author.", link:"" },
+    { en:"Wen Tianxiang", note:"Correct. From 'Crossing Lingding Ocean'.", link:"" },
+    { en:"Xin Qiji", note:"Not the author.", link:"" }
+  ]
+},
 
-// { 
-//   id:58, 
-//   question:"诗与画是两种紧密联系而又各有所长的艺术形式，下列诗人中，被苏轼评为“诗中有画，画中有诗”的诗人是（ ）", 
-//   translation:"Which poet was described by Su Shi as 'there is painting in his poetry and poetry in his painting'?",
-//   options:["杜甫","李白","李商隐","王维"], 
-//   answer:3,
-//   explanations:[
-//     { en:"Du Fu", note:"Great realist poet, but not described this way.", link:"" },
-//     { en:"Li Bai", note:"Romantic poet, not known for this trait.", link:"" },
-//     { en:"Li Shangyin", note:"Known for obscure poetry, not this description.", link:"" },
-//     { en:"Wang Wei", note:"Correct. Famous for blending poetry and painting.", link:"" }
-//   ]
-// },
+{ 
+  id:58, 
+  question:"诗与画是两种紧密联系而又各有所长的艺术形式，下列诗人中，被苏轼评为“诗中有画，画中有诗”的诗人是（ ）", 
+  translation:"Which poet was described by Su Shi as 'there is painting in his poetry and poetry in his painting'?",
+  options:["杜甫","李白","李商隐","王维"], 
+  answer:3,
+  explanations:[
+    { en:"Du Fu", note:"Great realist poet, but not described this way.", link:"" },
+    { en:"Li Bai", note:"Romantic poet, not known for this trait.", link:"" },
+    { en:"Li Shangyin", note:"Known for obscure poetry, not this description.", link:"" },
+    { en:"Wang Wei", note:"Correct. Famous for blending poetry and painting.", link:"" }
+  ]
+},
 
-// { 
-//   id:59, 
-//   question:"《诗经》是中国古代第一部诗歌总集，原称“诗”或“诗三百”，那么《诗经》中有标题有内容的诗一共有多少首呢？（ ）", 
-//   translation:"The Book of Songs is the earliest collection of Chinese poetry. How many poems does it contain?",
-//   options:["295","300","302","305"], 
-//   answer:3,
-//   explanations:[
-//     { en:"295", note:"Incorrect count.", link:"" },
-//     { en:"300", note:"Approximate name '诗三百', not exact.", link:"" },
-//     { en:"302", note:"Incorrect count.", link:"" },
-//     { en:"305", note:"Correct. The Book of Songs contains 305 poems.", link:"" }
-//   ]
-// },
+{ 
+  id:59, 
+  question:"《诗经》是中国古代第一部诗歌总集，原称“诗”或“诗三百”，那么《诗经》中有标题有内容的诗一共有多少首呢？（ ）", 
+  translation:"The Book of Songs is the earliest collection of Chinese poetry. How many poems does it contain?",
+  options:["295","300","302","305"], 
+  answer:3,
+  explanations:[
+    { en:"295", note:"Incorrect count.", link:"" },
+    { en:"300", note:"Approximate name '诗三百', not exact.", link:"" },
+    { en:"302", note:"Incorrect count.", link:"" },
+    { en:"305", note:"Correct. The Book of Songs contains 305 poems.", link:"" }
+  ]
+},
 
-// { 
-//   id:60, 
-//   question:"以下哪个县级市制造业发达，是全球最大的小商品集散中心，被誉为“世界超市”？（ ）", 
-//   translation:"Which county-level city is known as the world's largest small commodity distribution center, often called the 'world supermarket'?",
-//   options:["福安","义乌","晋江","昆山"], 
-//   answer:1,
-//   explanations:[
-//     { en:"Fu'an", note:"Not known for this distinction.", link:"" },
-//     { en:"Yiwu", note:"Correct. Famous global small commodity hub.", link:"" },
-//     { en:"Jinjiang", note:"Known for manufacturing, but not this title.", link:"" },
-//     { en:"Kunshan", note:"Industrial city, but not 'world supermarket'.", link:"" }
-//   ]
-// },
+{ 
+  id:60, 
+  question:"以下哪个县级市制造业发达，是全球最大的小商品集散中心，被誉为“世界超市”？（ ）", 
+  translation:"Which county-level city is known as the world's largest small commodity distribution center, often called the 'world supermarket'?",
+  options:["福安","义乌","晋江","昆山"], 
+  answer:1,
+  explanations:[
+    { en:"Fu'an", note:"Not known for this distinction.", link:"" },
+    { en:"Yiwu", note:"Correct. Famous global small commodity hub.", link:"" },
+    { en:"Jinjiang", note:"Known for manufacturing, but not this title.", link:"" },
+    { en:"Kunshan", note:"Industrial city, but not 'world supermarket'.", link:"" }
+  ]
+},
+
+
+
+{ 
+  id:61,
+  type:"fill",
+  question:"桃园三结义中的三弟是（ ）。",
+  translation:"The third brother in the Peach Garden Oath is ( ).",
+  answer:"张飞",
+  explanation:{
+    en:"Zhang Fei",
+    note:"In 桃园三结义, the three brothers are 刘备, 关羽, and 张飞. 张飞 is the third brother."
+  }
+},
+
+{ 
+  id:62,
+  type:"fill",
+  question:"这种水果很好吃，可惜没（ ）人知道。",
+  translation:"This fruit is very delicious, but unfortunately not many people know about it.",
+  answer:"什么",
+  explanation:{
+    en:"什么",
+    note:"This is the fixed expression ‘没什么人知道’, meaning ‘hardly anyone knows’."
+  }
+},
+
+{ 
+  id:63,
+  type:"fill",
+  question:"端午节是中国传统节日，是为了纪念（ ）而产生的。",
+  translation:"The Dragon Boat Festival is a traditional Chinese festival that arose to commemorate ( ).",
+  answer:"屈原",
+  explanation:{
+    en:"Qu Yuan",
+    note:"The Dragon Boat Festival is traditionally associated with commemorating the poet 屈原."
+  }
+},
+
+{ 
+  id:64,
+  type:"fill",
+  question:"流行于欧洲的西班牙吉他，与一种中国民族乐器有共同的祖先。这种中国乐器是（ ）。",
+  translation:"The Spanish guitar, popular in Europe, shares a common ancestor with a Chinese musical instrument. That Chinese instrument is ( ).",
+  answer:"琵琶",
+  explanation:{
+    en:"pipa",
+    note:"琵琶 is a traditional Chinese plucked string instrument."
+  }
+},
+
+{ 
+  id:65,
+  type:"fill",
+  question:"中国文化中的“岁寒三友”指的是（ ）。",
+  translation:"In Chinese culture, the 'Three Friends of Winter' are ( ).",
+  answer:"松竹梅",
+  explanation:{
+    en:"pine, bamboo, and plum",
+    note:"岁寒三友 refers to 松、竹、梅, symbols of perseverance and integrity."
+  }
+},
+
+{ 
+  id:66,
+  type:"fill",
+  question:"中国古代一部长篇章回体小说是（ ）。",
+  translation:"One ancient Chinese chaptered novel is ( ).",
+  answer:"《三国演义》",
+  explanation:{
+    en:"Romance of the Three Kingdoms",
+    note:"《三国演义》 is a classic Chinese long chaptered historical novel."
+  }
+},
+
+{ 
+  id:67,
+  type:"fill",
+  question:"中国当代作家刘慈欣的（ ）曾获得第73届世界科幻大会最佳长篇小说奖“雨果奖”。",
+  translation:"( ) by the contemporary Chinese writer Liu Cixin won the Hugo Award for Best Novel at the 73rd World Science Fiction Convention.",
+  answer:"《三体》",
+  explanation:{
+    en:"The Three-Body Problem",
+    note:"《三体》 is Liu Cixin’s famous science fiction novel."
+  }
+},
+
+{ 
+  id:68,
+  type:"fill",
+  question:"“三朵节”是（ ）族的节日。",
+  translation:"The 'Sanduo Festival' is a festival of the ( ) ethnic group.",
+  answer:"纳西族",
+  explanation:{
+    en:"Naxi ethnic group",
+    note:"三朵节 is a traditional festival of the 纳西族."
+  }
+},
+
+{ 
+  id:69,
+  type:"fill",
+  question:"中国古代负责外国来使事务的机构是（ ）。",
+  translation:"In ancient China, the government office responsible for foreign envoys was ( ).",
+  answer:"礼部",
+  explanation:{
+    en:"Ministry of Rites",
+    note:"礼部 handled rites, ceremonies, and matters involving foreign envoys."
+  }
+},
+
+{ 
+  id:70,
+  type:"fill",
+  question:"喝饮料对身体不好，（ ）你想保持健康，就少喝一点。",
+  translation:"Drinking beverages is not good for your health. ( ) you want to stay healthy, drink less.",
+  answer:"如果",
+  explanation:{
+    en:"if",
+    note:"如果 introduces a condition: 'if you want to stay healthy...'"
+  }
+},
+{ 
+  id:71,
+  type:"fill",
+  question:"二十四节气中，与天气由寒转暖、万物复苏有关的是（ ）。",
+  translation:"Among the 24 solar terms, the one associated with warming weather and the revival of all things is ( ).",
+  answer:"惊蛰",
+  explanation:{
+    en:"Jingzhe (Awakening of Insects)",
+    note:"惊蛰 marks the time when insects awaken and spring begins to fully emerge."
+  }
+},
+
+{ 
+  id:72,
+  type:"fill",
+  question:"汉代雕塑中的杰作“马踏飞燕”出土自（ ）省。",
+  translation:"The Han dynasty sculpture masterpiece 'Galloping Horse Treading on a Flying Swallow' was unearthed in ( ) Province.",
+  answer:"甘肃",
+  explanation:{
+    en:"Gansu Province",
+    note:"This famous bronze sculpture was discovered in Gansu."
+  }
+},
+
+{ 
+  id:73,
+  type:"fill",
+  question:"在古时，用以礼仪的玉器有“六器”，其中被称为六器之首的是（ ）。",
+  translation:"In ancient times, there were six ritual jade objects. The most important among them is ( ).",
+  answer:"璧",
+  explanation:{
+    en:"Bi (jade disc)",
+    note:"璧 is considered the most important of the six ritual jade objects."
+  }
+},
+
+{ 
+  id:74,
+  type:"fill",
+  question:"中医典籍《伤寒杂病论》的作者是（ ）。",
+  translation:"The author of the traditional Chinese medicine text 'Shanghan Zabing Lun' is ( ).",
+  answer:"张仲景",
+  explanation:{
+    en:"Zhang Zhongjing",
+    note:"A famous ancient Chinese physician, known as a key figure in TCM."
+  }
+},
+
+{ 
+  id:75,
+  type:"fill",
+  question:"既举办过夏季运动会又举办过冬季奥运会的城市是（ ）。",
+  translation:"The city that has hosted both the Summer and Winter Olympics is ( ).",
+  answer:"北京",
+  explanation:{
+    en:"Beijing",
+    note:"Beijing hosted the 2008 Summer Olympics and 2022 Winter Olympics."
+  }
+},
+
+{ 
+  id:76,
+  type:"fill",
+  question:"野生象群“短鼻家族”在云南开启了一场北移南归的组团旅行，这是（ ）象群。",
+  translation:"The wild elephant herd known as the 'Short-Nose Family' in Yunnan is a group of ( ) elephants.",
+  answer:"亚洲",
+  explanation:{
+    en:"Asian elephants",
+    note:"These elephants belong to the Asian elephant species."
+  }
+},
+
+{ 
+  id:77,
+  type:"fill",
+  question:"中华民族有56个民族，其中人口最少的是（ ）族。",
+  translation:"China has 56 ethnic groups; the one with the smallest population is the ( ) ethnic group.",
+  answer:"塔塔尔族",
+  explanation:{
+    en:"Tatar ethnic group",
+    note:"塔塔尔族 is one of the smallest ethnic minorities in China."
+  }
+},
+
+{ 
+  id:78,
+  type:"fill",
+  question:"世界上最大的也是最灵敏的单口径射电望远镜是（ ）。",
+  translation:"The world's largest and most sensitive single-dish radio telescope is ( ).",
+  answer:"中国天眼",
+  explanation:{
+    en:"FAST (Five-hundred-meter Aperture Spherical Telescope)",
+    note:"Known as 'China Sky Eye', located in Guizhou."
+  }
+},
+
+{ 
+  id:79,
+  type:"fill",
+  question:"嫦娥六号是中国嫦娥探月计划第六个探测器，其着陆区在（ ）。",
+  translation:"Chang’e-6 is the sixth probe in China's lunar exploration program. It landed on the ( ).",
+  answer:"月球背面",
+  explanation:{
+    en:"the far side of the Moon",
+    note:"This is a major milestone in lunar exploration."
+  }
+},
+
+{ 
+  id:80,
+  type:"fill",
+  question:"下面这张图片中的科学家是（ ）。",
+  translation:"The scientist in the image below is ( ).",
+  answer:"袁隆平",
+  image:"images/q80.png", // ← adjust path if needed
+  explanation:{
+    en:"Yuan Longping",
+    note:"Known as the 'Father of Hybrid Rice', he made major contributions to global food security."
+  }
+}
 ];

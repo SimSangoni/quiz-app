@@ -30,7 +30,6 @@ function toggleShuffle() {
   const toggleBtn = document.getElementById("shuffle-toggle");
   toggleBtn.textContent = shuffleEnabled ? "Shuffle: ON" : "Shuffle: OFF";
 
-  // 🔁 FULL RE-INITIALISATION
   restartQuiz();
 }
 
@@ -41,15 +40,15 @@ function toggleShuffle() {
 function prepareQuestions(source) {
   quizQuestions = source.map(q => ({
     ...q,
-    options: [...q.options],
+    options: q.options ? [...q.options] : [],
     explanations: q.explanations ? [...q.explanations] : [],
   }));
 
-if (shuffleEnabled) {
-  shuffle(quizQuestions);
-} else {
-  quizQuestions.sort((a, b) => a.id - b.id);
-}
+  if (shuffleEnabled) {
+    shuffle(quizQuestions);
+  } else {
+    quizQuestions.sort((a, b) => a.id - b.id);
+  }
 
   totalQuestions = quizQuestions.length;
 }
@@ -64,7 +63,12 @@ function loadQuestion() {
 
   const q = quizQuestions[currentQuestion];
 
-  questionEl.innerHTML = `
+  if (!q) {
+  questionEl.textContent = "Error loading question.";
+  return;
+}
+
+questionEl.innerHTML = `
     <div class="question-main">(${currentQuestion + 1}/${totalQuestions}) ${q.question}</div>
     
     ${q.image ? `
@@ -78,12 +82,40 @@ function loadQuestion() {
     </div>
   `;
 
-  const translationEl = document.getElementById("question-translation");
+    const translationEl = document.getElementById("question-translation");
   questionEl.onclick = () => {
     if (!q.translation) return;
     translationEl.style.display =
       translationEl.style.display === "none" ? "block" : "none";
   };
+
+  // HANDLE FILL TYPE
+if (q.type === "fill") {
+  answersEl.innerHTML = "";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Type your answer...";
+  input.className = "fill-input";
+
+  const submitBtn = document.createElement("button");
+  submitBtn.textContent = "Submit";
+  submitBtn.className = "submit-btn";
+
+  submitBtn.onclick = () => {
+    const userAnswer = input.value.trim();
+
+    if (!userAnswer) return;
+
+    checkFillAnswer(userAnswer, q);
+  };
+
+  answersEl.appendChild(input);
+  answersEl.appendChild(submitBtn);
+
+  return; // 🚨 IMPORTANT: stop MCQ rendering
+}
+
 
   currentOptions = q.options.map((opt, i) => ({
     text: opt,
@@ -188,6 +220,67 @@ function selectAnswer(index) {
   continueBtn.onclick = () => {
     currentQuestion++;
     currentOptions = [];
+
+    if (currentQuestion >= quizQuestions.length) {
+      showEndScreen();
+    } else {
+      loadQuestion();
+    }
+  };
+
+  answersEl.appendChild(continueBtn);
+}
+
+function checkFillAnswer(userAnswer, q) {
+  const correct = q.answer.trim();
+
+  if (userAnswer === correct) {
+    feedbackEl.textContent = "Correct";
+    score++;
+  } else {
+    feedbackEl.textContent = `Wrong (Correct: ${correct})`;
+
+    if (!wrongQuestions.find(w => w.id === q.id)) {
+      wrongQuestions.push(q);
+    }
+  }
+
+  // Explanation display
+if (q.explanation) {
+  const infoBtn = document.createElement("button");
+  infoBtn.textContent = "?";
+  infoBtn.className = "info-btn";
+
+  infoBtn.onclick = () => {
+    let existing = answersEl.querySelector(".option-explanation");
+
+    if (existing) {
+      existing.remove();
+      return;
+    }
+
+    const expBox = document.createElement("div");
+    expBox.className = "option-explanation";
+
+    expBox.innerHTML = `
+      <div><strong>English:</strong> ${q.explanation.en || ""}</div>
+      <div><strong>Note:</strong> ${q.explanation.note || ""}</div>
+    `;
+
+    answersEl.appendChild(expBox);
+  };
+
+  answersEl.appendChild(infoBtn);
+}
+
+  scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
+
+  const continueBtn = document.createElement("button");
+  continueBtn.textContent = "Continue";
+  continueBtn.className = "continue-btn";
+
+  continueBtn.onclick = () => {
+    currentQuestion++;
 
     if (currentQuestion >= quizQuestions.length) {
       showEndScreen();

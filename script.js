@@ -5,6 +5,7 @@ let currentOptions = [];
 
 const originalQuestions = [...questions];
 let quizQuestions = [];
+let activeQuestions = [];
 let totalQuestions = 0;
 let shuffleEnabled = true;
 
@@ -80,7 +81,8 @@ function startQuiz() {
   score = 0;
   wrongQuestions = [];
 
-  prepareQuestions(filtered);
+activeQuestions = filtered;
+prepareQuestions(activeQuestions);
 
   scoreEl.textContent = `Score: 0 / ${totalQuestions}`;
 
@@ -385,17 +387,20 @@ function startReviewMode() {
 ========================= */
 
 function restartQuiz() {
+  // 🔁 Reset all state
   currentQuestion = 0;
   score = 0;
   wrongQuestions = [];
-  currentOptions = [];
+  activeQuestions = [];
+  quizQuestions = [];
 
   feedbackEl.textContent = "";
+  answersEl.innerHTML = "";
+  questionEl.innerHTML = "";
 
-  prepareQuestions(originalQuestions);
-  scoreEl.textContent = `Score: 0 / ${totalQuestions}`;
-
-  loadQuestion();
+  // 🏠 Show setup screen again
+  document.getElementById("setup-screen").style.display = "block";
+  document.getElementById("quiz-container").style.display = "none";
 }
 
 /* =========================

@@ -54,6 +54,44 @@ function prepareQuestions(source) {
 }
 
 /* =========================
+   QUIZ RANGE
+========================= */
+
+function startQuiz() {
+  const start = parseInt(document.getElementById("start-range").value);
+  const end = parseInt(document.getElementById("end-range").value);
+
+  // 🔒 Validation
+  if (start > end) {
+    alert("Invalid range");
+    return;
+  }
+
+  // 🎯 Filter questions
+  const filtered = originalQuestions.filter(q => q.id >= start && q.id <= end);
+
+  if (filtered.length === 0) {
+    alert("No questions in this range");
+    return;
+  }
+
+  // 🔁 Reset quiz state
+  currentQuestion = 0;
+  score = 0;
+  wrongQuestions = [];
+
+  prepareQuestions(filtered);
+
+  scoreEl.textContent = `Score: 0 / ${totalQuestions}`;
+
+  // 👇 Switch screens
+  document.getElementById("setup-screen").style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+
+  loadQuestion();
+}
+
+/* =========================
    LOAD QUESTION
 ========================= */
 
@@ -371,5 +409,3 @@ function init() {
 
   loadQuestion();
 }
-
-init();

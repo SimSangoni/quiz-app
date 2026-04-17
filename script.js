@@ -2,6 +2,7 @@ let currentQuestion = 0;
 let score = 0;
 let wrongQuestions = [];
 let currentOptions = [];
+let hasAnswered = false;
 
 const originalQuestions = [...questions];
 let quizQuestions = [];
@@ -59,22 +60,50 @@ function prepareQuestions(source) {
 ========================= */
 
 function startQuiz() {
-  const start = parseInt(document.getElementById("start-range").value);
-  const end = parseInt(document.getElementById("end-range").value);
+  const input = document.getElementById("range-input").value;
 
-  // 🔒 Validation
-  if (start > end) {
-    alert("Invalid range");
-    return;
-  }
+    if (!input) {
+      alert("Enter a range");
+      return;
+    }
 
-  // 🎯 Filter questions
-  const filtered = originalQuestions.filter(q => q.id >= start && q.id <= end);
+    let selectedIds = [];
 
-  if (filtered.length === 0) {
-    alert("No questions in this range");
-    return;
-  }
+    // Split by comma → ["1-10", "60-70"]
+    const parts = input.split(",");
+
+    parts.forEach(part => {
+      const range = part.trim().split("-");
+
+      if (range.length === 2) {
+        let start = parseInt(range[0]);
+        let end = parseInt(range[1]);
+
+        if (!isNaN(start) && !isNaN(end)) {
+          for (let i = start; i <= end; i++) {
+            selectedIds.push(i);
+          }
+        }
+      } else {
+        // Single number support: "5"
+        let num = parseInt(range[0]);
+        if (!isNaN(num)) {
+          selectedIds.push(num);
+        }
+      }
+    });
+
+    // Remove duplicates
+    selectedIds = [...new Set(selectedIds)];
+
+    // Filter questions
+    const filtered = originalQuestions.filter(q => selectedIds.includes(q.id));
+
+    if (filtered.length === 0) {
+      alert("No valid questions found");
+      return;
+    }
+
 
   // 🔁 Reset quiz state
   currentQuestion = 0;
@@ -100,8 +129,10 @@ prepareQuestions(activeQuestions);
 function loadQuestion() {
   feedbackEl.textContent = "";
   answersEl.innerHTML = "";
+  
 
   const q = quizQuestions[currentQuestion];
+  hasAnswered = false;
 
   if (!q) {
   questionEl.textContent = "Error loading question.";
@@ -142,13 +173,22 @@ if (q.type === "fill") {
   submitBtn.textContent = "Submit";
   submitBtn.className = "submit-btn";
 
-  submitBtn.onclick = () => {
-    const userAnswer = input.value.trim();
+  let answered = false;
 
-    if (!userAnswer) return;
+    submitBtn.onclick = () => {
+      if (answered) return; // 🚫 prevent second click
 
-    checkFillAnswer(userAnswer, q);
-  };
+      const userAnswer = input.value.trim();
+      if (!userAnswer) return;
+
+      answered = true; // 🔒 lock
+
+      // 🔒 disable input + button
+      input.disabled = true;
+      submitBtn.disabled = true;
+
+      checkFillAnswer(userAnswer, q);
+    };
 
   answersEl.appendChild(input);
   answersEl.appendChild(submitBtn);
@@ -225,6 +265,9 @@ function selectAnswer(index) {
   const correctOriginal = quizQuestions[currentQuestion].answer;
   const rows = answersEl.querySelectorAll(".option-row");
 
+  if (hasAnswered) return;
+  hasAnswered = true;
+
   rows.forEach((row, i) => {
     const btn = row.querySelector(".answer-btn");
     const infoBtn = row.querySelector(".info-btn");
@@ -272,6 +315,7 @@ function selectAnswer(index) {
 }
 
 function checkFillAnswer(userAnswer, q) {
+  answersEl.innerHTML = ""; // 🔥 clear old buttons (prevents duplicates)
   const correct = q.answer.trim();
 
   if (userAnswer === correct) {

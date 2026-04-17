@@ -262,12 +262,16 @@ function toggleExplanation(row, optObj) {
 ========================= */
 
 function selectAnswer(index) {
-  const correctOriginal = quizQuestions[currentQuestion].answer;
-  const rows = answersEl.querySelectorAll(".option-row");
-
   if (hasAnswered) return;
   hasAnswered = true;
 
+  const q = quizQuestions[currentQuestion];
+  const correctOriginal = q.answer;
+  const rows = answersEl.querySelectorAll(".option-row");
+
+  const isCorrect = currentOptions[index].originalIndex === correctOriginal;
+
+  // 🔒 Lock UI + colour
   rows.forEach((row, i) => {
     const btn = row.querySelector(".answer-btn");
     const infoBtn = row.querySelector(".info-btn");
@@ -282,16 +286,32 @@ function selectAnswer(index) {
     }
   });
 
-  if (currentOptions[index].originalIndex === correctOriginal) {
+  if (isCorrect) {
     feedbackEl.textContent = "Correct";
     score++;
-  } else {
-    feedbackEl.textContent = "Wrong";
 
-    const q = quizQuestions[currentQuestion];
-    if (!wrongQuestions.find(w => w.id === q.id)) {
-      wrongQuestions.push(q);
-    }
+    scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
+
+    // 🔥 AUTO NEXT
+    setTimeout(() => {
+      currentQuestion++;
+      currentOptions = [];
+
+      if (currentQuestion >= quizQuestions.length) {
+        showEndScreen();
+      } else {
+        loadQuestion();
+      }
+    }, 600);
+
+    return;
+  }
+
+  // ❌ WRONG FLOW
+  feedbackEl.textContent = "Wrong";
+
+  if (!wrongQuestions.find(w => w.id === q.id)) {
+    wrongQuestions.push(q);
   }
 
   scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
@@ -315,53 +335,44 @@ function selectAnswer(index) {
 }
 
 function checkFillAnswer(userAnswer, q) {
-  answersEl.innerHTML = ""; // 🔥 clear old buttons (prevents duplicates)
-  const correct = q.answer.trim();
+  answersEl.innerHTML = "";
 
-  if (userAnswer === correct) {
+  const correct = q.answer.trim();
+  const isCorrect = userAnswer === correct;
+
+  if (isCorrect) {
     feedbackEl.textContent = "Correct";
     score++;
-  } else {
-    feedbackEl.textContent = `Wrong (Correct: ${correct})`;
 
-    if (!wrongQuestions.find(w => w.id === q.id)) {
-      wrongQuestions.push(q);
-    }
+    scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
+
+    // 🔥 AUTO NEXT
+    setTimeout(() => {
+      currentQuestion++;
+
+      if (currentQuestion >= quizQuestions.length) {
+        showEndScreen();
+      } else {
+        loadQuestion();
+      }
+    }, 600);
+
+    return;
   }
 
-  // Explanation display
-if (q.explanation) {
-  const infoBtn = document.createElement("button");
-  infoBtn.textContent = "?";
-  infoBtn.className = "info-btn";
+  // ❌ WRONG FLOW
+  feedbackEl.textContent = `Wrong (Correct: ${correct})`;
 
-  infoBtn.onclick = () => {
-    let existing = answersEl.querySelector(".option-explanation");
-
-    if (existing) {
-      existing.remove();
-      return;
-    }
-
-    const expBox = document.createElement("div");
-    expBox.className = "option-explanation";
-
-    expBox.innerHTML = `
-      <div><strong>English:</strong> ${q.explanation.en || ""}</div>
-      <div><strong>Note:</strong> ${q.explanation.note || ""}</div>
-    `;
-
-    answersEl.appendChild(expBox);
-  };
-
-  answersEl.appendChild(infoBtn);
-}
+  if (!wrongQuestions.find(w => w.id === q.id)) {
+    wrongQuestions.push(q);
+  }
 
   scoreEl.textContent = `Score: ${score} / ${totalQuestions}`;
 
+  // ✅ CONTINUE BUTTON
   const continueBtn = document.createElement("button");
-  continueBtn.textContent = "Continue";
   continueBtn.className = "continue-btn";
+  continueBtn.textContent = "Continue";
 
   continueBtn.onclick = () => {
     currentQuestion++;
@@ -374,6 +385,34 @@ if (q.explanation) {
   };
 
   answersEl.appendChild(continueBtn);
+
+  // ✅ EXPLANATION TOGGLE
+  if (q.explanation) {
+    const infoBtn = document.createElement("button");
+    infoBtn.textContent = "?";
+    infoBtn.className = "info-btn";
+
+    infoBtn.onclick = () => {
+      let existing = answersEl.querySelector(".option-explanation");
+
+      if (existing) {
+        existing.remove();
+        return;
+      }
+
+      const expBox = document.createElement("div");
+      expBox.className = "option-explanation";
+
+      expBox.innerHTML = `
+        <div><strong>English:</strong> ${q.explanation.en || ""}</div>
+        <div><strong>Note:</strong> ${q.explanation.note || ""}</div>
+      `;
+
+      answersEl.appendChild(expBox);
+    };
+
+    answersEl.appendChild(infoBtn);
+  }
 }
 
 /* =========================

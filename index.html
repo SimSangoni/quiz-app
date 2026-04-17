@@ -7,20 +7,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>汉语桥 Quiz</h1>
-      <button id="shuffle-toggle" onclick="toggleShuffle()">Shuffle: ON</button>
+    <div id="setup-screen">
+      <h3>Select Question Range</h3>
 
-      <div id="question-box">
-        <p id="question">Question loads here</p>
+      <label>From:</label>
+      <input type="number" id="start-range" min="1" value="1" />
+
+      <label>To:</label>
+      <input type="number" id="end-range" min="1" value="10" />
+
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="quiz-container" style="display: none">
+      <div class="container">
+        <h1>汉语桥 Quiz</h1>
+        <button id="shuffle-toggle" onclick="toggleShuffle()">
+          Shuffle: ON
+        </button>
+
+        <div id="question-box">
+          <p id="question">Question loads here</p>
+        </div>
+
+        <div id="answers"></div>
+
+        <p id="feedback"></p>
+
+        <p id="score">Score: 0</p>
+        <button onclick="restartQuiz()">Restart</button>
       </div>
-
-      <div id="answers"></div>
-
-      <p id="feedback"></p>
-
-      <p id="score">Score: 0</p>
-      <button onclick="restartQuiz()">Restart</button>
     </div>
 
     <script src="questions.js"></script>

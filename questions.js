@@ -954,17 +954,17 @@ const questions = [
     en:"if",
     note:"如果 introduces a condition: 'if you want to stay healthy...'"
   }
-// },
-// { 
-//   id:71,
-//   type:"fill",
-//   question:"二十四节气中，与天气由寒转暖、万物复苏有关的是（ ）。",
-//   translation:"Among the 24 solar terms, the one associated with warming weather and the revival of all things is ( ).",
-//   answer:"惊蛰",
-//   explanation:{
-//     en:"Jingzhe (Awakening of Insects)",
-//     note:"惊蛰 marks the time when insects awaken and spring begins to fully emerge."
-//   }
+},
+{ 
+  id:71,
+  type:"fill",
+  question:"二十四节气中，与天气由寒转暖、万物复苏有关的是（ ）。",
+  translation:"Among the 24 solar terms, the one associated with warming weather and the revival of all things is ( ).",
+  answer:"惊蛰",
+  explanation:{
+    en:"Jingzhe (Awakening of Insects)",
+    note:"惊蛰 marks the time when insects awaken and spring begins to fully emerge."
+  }
 // },
 
 // { 

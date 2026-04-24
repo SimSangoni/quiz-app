@@ -60,7 +60,7 @@ const questions = [
   question:"下列选项中,两个“一”为不同声调的是（ ）", 
   translation:"In which option are the two occurrences of '一' pronounced with different tones?",
   options:["百里挑(一) 举(一)反三","(一)见钟情 (一)箭双雕","以(一)当十 (一)针见血","(一)马当先 (一)言为定"], 
-  answer:3,
+  answer:2,
   explanations:[
     { en:"same tone", note:"These two occurrences are not the target pair with different tones.", link:"" },
     { en:"same tone", note:"These two occurrences do not show the tone difference being tested.", link:"" },
